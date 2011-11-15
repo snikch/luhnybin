@@ -1,7 +1,7 @@
 class String
   def luhn?
     return false if self == ''
-    self.to_s.split(//).reverse.each_with_index.map{|n,i|i.odd? ? n.to_i*2 : n }.join.split(//).map(&:to_i).inject(:+) % 10 == 0
+    self.split(//).reverse.each_with_index.map{|n,i|i.odd? ? n.to_i*2 : n }.join.split(//).map(&:to_i).inject(:+) % 10 == 0
   end
 end
 
